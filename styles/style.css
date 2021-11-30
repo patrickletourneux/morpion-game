@@ -1,0 +1,29 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#playerToPlay{
+    font-size: 2rem;
+}
+.line{
+    display: flex;
+}
+
+.cell{
+    width: 100px;
+    height: 100px;
+    border: solid black 1px;
+    background-color: grey;
+}
+
+#restart{
+    height: 50px;
+    width: 200px;
+    margin: 50px;
+    font-size: 2rem;
+    background-color: yellow;
+}
