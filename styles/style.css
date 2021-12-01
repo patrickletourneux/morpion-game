@@ -20,6 +20,12 @@ body{
     background-color: grey;
 }
 
+.player-1{
+    background-color: green;
+}
+.player-2{
+    background-color: red;
+}
 #restart{
     height: 50px;
     width: 200px;

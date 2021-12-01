@@ -22,10 +22,12 @@ const app = {
     changeCellColor: (cell) => {
         console.log('app.player1Turn ', app.player1Turn)
         if (app.player1Turn && cell.classList.contains('free')) {
-            cell.style.backgroundColor = "green";
+            // cell.style.backgroundColor = "green";
+            cell.classList.add('player-1');
             cell.classList.remove('free');
         } else if (cell.classList.contains('free')) {
-            cell.style.backgroundColor = "red";
+            // cell.style.backgroundColor = "red";
+            cell.classList.add('player-2');
             cell.classList.remove('free');
         }
         app.player1Turn = !app.player1Turn;
