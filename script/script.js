@@ -4,14 +4,15 @@ const app = {
         document.getElementById('legend').textContent = 'player 1 green  ///    player 2 red';
         document.getElementById('playerToPlay').textContent = 'partie to begin with player 1';
         container.textContent = '';
-        for (let index = 0; index < 3; index++) {
+        for (let i = 0; i < 3; i++) {
             const elementLine = document.createElement('div');
             elementLine.classList.add('line');
             for (let j = 0; j < 3; j++) {
                 const elementCell = document.createElement('div');
                 elementCell.classList.add('cell');
                 elementCell.classList.add('free');
-                elementCell.classList.add(`X${index}Y${j}`);
+                // elementCell.classList.add(`X${index}Y${j}`);
+                elementCell.dataset.position=`X${i}Y${j}`;
                 elementLine.appendChild(elementCell);
                 console.log('cell');
             }
@@ -26,6 +27,8 @@ const app = {
             // cell.style.backgroundColor = "green";
             cell.classList.add('player-1');
             cell.classList.remove('free');
+            app.player1Combinaisons.push(cell.dataset.position)
+            console.log('app.player1Combinaisons:', app.player1Combinaisons)
             app.player1Turn = !app.player1Turn;
             if (app.player1Turn) {
                 document.getElementById('playerToPlay').textContent = 'player 1 turn';
@@ -36,6 +39,8 @@ const app = {
             // cell.style.backgroundColor = "red";
             cell.classList.add('player-2');
             cell.classList.remove('free');
+            app.player2Combinaisons.push(cell.dataset.position)
+            console.log('app.player2Combinaisons:', app.player2Combinaisons)
             app.player1Turn = !app.player1Turn;
             if (app.player1Turn) {
                 document.getElementById('playerToPlay').textContent = 'player 1 turn';
@@ -46,6 +51,7 @@ const app = {
 
 
     },
+
     winCombinaisons: [
         ['X0Y0', 'X1Y0', 'X2Y0'],
         ['X0Y1', 'X1Y1', 'X2Y1'],
